@@ -1,0 +1,248 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+.nav-left button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.dropdown a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+.container{
+    margin-left: 12px;
+}
+
+.dropdown a:hover {
+    background-color: #555;
+}
+
+.nav-center a, .nav-right a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-center a:hover, .nav-right a:hover {
+    color: #00c6ff;
+}
+
+.nav-center a::after, .nav-right a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #00c6ff;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-center a:hover::after, .nav-right a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-right select {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.get-started {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.get-started:hover {
+    background-color: #f8f9fa;
+}
+
+/* Dictionary Section */
+.dict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 50px auto;
+    
+}
+
+.dict input {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.dict button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dict button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Translation Section */
+.translate-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    margin:100px;
+    margin-left: 30%;
+    margin-top: -4px;
+}
+
+#t1{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.translator {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.select-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+#fromLang,#ta,#b1,#toLang{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+#fromLang,#toLang{
+    margin-left: 6px;
+}
+#ta{
+    width:95%;
+}
+
+#ta {
+    height: 80px;
+    resize: none;
+}
+
+#b1{
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#b1:hover {
+    background: #0056b3;
+}
+
+.output-box {
+    padding: 10px;
+    border-radius: 8px;
+    background: #f1f1f1;
+    min-height: 40px;
+    color: #333;
+}
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}

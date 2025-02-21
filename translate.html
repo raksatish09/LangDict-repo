@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            
+        </div>
+        <div class="nav-center">
+            <a href="dictionary.html">Dictionary</a>
+            <a href="#translate">Translate</a>
+            <a href="index.html">Home</a>
+        </div>
+        <div class="nav-right">
+            <a href="#login">Login</a>
+            <a href="#signup">Sign Up</a>
+            <select id="countrySelect">
+                <option value="us">🇺🇸 USA</option>
+                <option value="uk">🇬🇧 UK</option>
+                <option value="in">🇮🇳 India</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="fr">🇫🇷 France</option>
+            </select>
+        </div>
+    </nav>
+    <p style="font-size: 30px;margin-left:12px;"><b>Language Translator </b></p>
+    <p style="margin-left:12px;margin-top:-5px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil unde alias animi! Deserunt consectetur totam itaque repellat voluptatem. Exercitationem illo quidem fuga mollitia odit fugiat omnis minima voluptatem qui ipsum.</p>
+
+    <section class="translate-container">
+        <h1 id="t1">Language Translator</h1>
+        <div class="translator">
+            <div class="select-group">
+                <select id="fromLang">
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="hi">Hindi</option>
+                    <option value="te">Telugu</option>
+                </select>
+                <select id="toLang">
+                    <option value="fr">French</option>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="hi">Hindi</option>
+                    <option value="te">Telugu</option>
+                </select>
+            </div>
+            <textarea id="ta" placeholder="Enter text to translate"></textarea>
+            <button   id="b1" onclick="translateText()">Translate</button>
+            <div id="outputText" class="output-box"></div>
+        </div>
+    </section>
+
+
+    <script>
+        function translateText() {
+            const inputText = document.getElementById("ta").value;
+            const fromLang = document.getElementById("fromLang").value;
+            const toLang = document.getElementById("toLang").value;
+        
+            if (!inputText.trim()) {
+                alert("Please enter text to translate.");
+                return;
+            }
+        
+            const apiKey = "YOUR_API_KEY"; // Replace with an actual API key
+            const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText)}&langpair=${fromLang}|${toLang}`;
+        
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("outputText").innerText = data.responseData.translatedText;
+                })
+                .catch(error => {
+                    console.error("Translation error:", error);
+                    alert("Translation failed. Please try again.");
+                });
+        }
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <button id="toggleMenu">☰</button>
+            <div class="dropdown" id="menu">
+                <a href="dictionary.html">Dictionary</a>
+                <a href="translate.html">Translate</a>
+                <a href="#translate">Logout</a>
+            </div>
+        </div>
+        <div class="nav-center">
+            <a href="dictionary.html">Dictionary</a>
+            <a href="#translate">Translate</a>
+            <a href="index.html">Home</a>
+        </div>
+        <div class="nav-right">
+            <a href="#login">Login</a>
+            <a href="#signup">Sign Up</a>
+            <select id="countrySelect">
+                <option value="us">🇺🇸 USA</option>
+                <option value="uk">🇬🇧 UK</option>
+                <option value="in">🇮🇳 India</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="fr">🇫🇷 France</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Dictionary</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nulla omnis quisquam incidunt! Recusandae animi accusamus, ab culpa iure commodi consequuntur maiores quasi in reprehenderit hic aut suscipit fugiat aliquam?</p>
+        <p>Here we provide a voice assistant to pronounce.<b>TRY IT!</b></p>
+        <div class="dict">
+        <input type="text" id="wordInput" placeholder="Enter a word">
+        <button  id="search"onclick="searchWord()">Search</button>
+        <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
